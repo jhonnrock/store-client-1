@@ -49,6 +49,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {baseURL} from './shared/baseurl';
 import {HttpClientModule} from '@angular/common/http';
 import { ClientComponent } from './client/client.component';
+import { CreateformComponent } from './client/createform/createform.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { ClientComponent } from './client/client.component';
     HomeComponent,
     ContactComponent,
     LoginComponent,
-    ClientComponent
+    ClientComponent,
+    CreateformComponent
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule,
@@ -76,7 +78,7 @@ import { ClientComponent } from './client/client.component';
     {provide: 'BaseURL', useValue: baseURL}
   ],
   entryComponents: [
-    LoginComponent
+    LoginComponent, CreateformComponent
   ],
   bootstrap: [AppComponent]
 })

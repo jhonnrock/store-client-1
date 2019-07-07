@@ -13,8 +13,7 @@ export class ClientService {
 
   listofclient(): Observable<Client[]> {
 
-      // return this.http.get(baseURL + 'Listitem') as Observable<Client[]>;
-      return null;
+    return this.http.get(baseURL + 'ListClient') as Observable<Client[]>;
   }
 
 }
