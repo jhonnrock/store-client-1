@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialogRef} from '@angular/material';
 import {Client} from '../../shared/client';
+import {ClientService} from '../../services/client.service';
+import {Router} from '@angular/router';
+import {NgForm} from '@angular/forms';
 
 
 @Component({
@@ -11,19 +14,29 @@ import {Client} from '../../shared/client';
 
 export class CreateformComponent implements OnInit {
 
-   client: any = {} ;
+    client = new Client();
 
-
-  constructor(public dialogRef: MatDialogRef<CreateformComponent>) { }
+  constructor(private route: Router , private serve: ClientService , public dialogRef: MatDialogRef<CreateformComponent>) { }
 
   ngOnInit() {
 
-    console.log(this.client);
   }
 
 
-  onSubmit() {
+  onSubmited() {
 
-    this.dialogRef.close();
+    this.serve.CreateList(this.client).subscribe(res => {
+      console.log(res);
+
+      this.dialogRef.close();
+      location.reload();
+
+    });
+
+    // console.log('verificando....');
+    // this.dialogRef.close();
+
   }
+
+
 }

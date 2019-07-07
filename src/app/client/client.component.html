@@ -51,9 +51,22 @@
       <td mat-cell *matCellDef="let element"> {{element.nitClient}} </td>
     </ng-container>
 
+    <!-- Symbol Column -->
+
     <ng-container matColumnDef="ciClient">
       <th mat-header-cell *matHeaderCellDef> Ci Client </th>
       <td mat-cell *matCellDef="let element"> {{element.ciClient}} </td>
+    </ng-container>
+
+
+
+    <ng-container matColumnDef="accion">
+      <th mat-header-cell *matHeaderCellDef> Accion </th>
+      <td mat-header-cell *matCellDef="let row">
+        <button mat-icon-button color="warn" (click)="DeleteClient(row)"><mat-icon>delete_outline</mat-icon></button>
+
+      </td>
+
     </ng-container>
 
 <!--<ng-container matColumnDef="acciones2">-->
