@@ -14,19 +14,20 @@ import {ClientService} from '../services/client.service';
 
 
 export class ClientComponent implements OnInit {
-  clients: Client[];
-  showbody: boolean;
-   displayedColumns: string[] = ['firstNameClient', 'name', 'weight', 'symbol', 'symbol2', 'symbol3'];
+   clients: Client[];
+   showbody: boolean;
+   displayedColumns: string[] = ['firstNameClient', 'lastNameClient', 'emailClient', 'numberTelephoneC', 'nitClient', 'ciClient'];
 
 
   constructor(public dialog: MatDialog, private serve: ClientService) { }
 
   ngOnInit() {
-    this.serve.listofclient().subscribe(myclient => {
-        this.clients = myclient;
+    this.serve.listofclient().subscribe(clients => {
+        this.clients = clients;
         console.log(this.clients);
 
      });
+    // this.serve.listofclient()
 
 
   }
